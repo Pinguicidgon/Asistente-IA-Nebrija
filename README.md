@@ -44,7 +44,7 @@ pip install transformers torch
 
 Una vez instaladas las dependencias, ejecuta el asistente con:
 ```bash
-python asistente_nebrija.py
+python Asistente_Nebrija.py
 ```
 ### 4️⃣ Introducir una incidencia
 
@@ -68,3 +68,25 @@ Este proceso puede tardar unos minutos, pero solo ocurre la primera vez.
 Después de eso, el programa funcionará de forma más rápida en tu equipo.
 
 ---
+
+
+---
+
+### 🧩 **BLOQUE 3 – Funcionamiento del modelo**
+
+```markdown
+## 🧩 Descripción del funcionamiento
+
+El asistente analiza el texto introducido por el usuario utilizando un modelo de **clasificación semántica de lenguaje natural (Zero-Shot Classification)**.  
+A partir de una lista de categorías predefinidas, el modelo predice el tipo de incidencia más probable.
+
+**Categorías posibles:**
+- Problema de acceso  
+- Error de matrícula  
+- Cuenta bloqueada  
+- Problema técnico  
+- Consulta administrativa  
+- Otro tipo de incidencia  
+
+**Flujo de trabajo:**
+````
