@@ -74,7 +74,6 @@ Después de eso, el programa funcionará de forma más rápida en tu equipo.
 
 ### 🧩 **BLOQUE 3 – Funcionamiento del modelo**
 
-```markdown
 ## 🧩 Descripción del funcionamiento
 
 El asistente analiza el texto introducido por el usuario utilizando un modelo de **clasificación semántica de lenguaje natural (Zero-Shot Classification)**.  
@@ -88,5 +87,52 @@ A partir de una lista de categorías predefinidas, el modelo predice el tipo de 
 - Consulta administrativa  
 - Otro tipo de incidencia  
 
-**Flujo de trabajo:**
-````
+---
+
+## 📸 Ejemplo de ejecución
+
+![Ejecución del asistente](screenshots/ejecucion.png)
+
+*Figura 1. Ejemplo de clasificación de incidencia con IA (modelo BART).*
+
+---
+
+## 💬 Contexto académico
+
+Este proyecto forma parte del **capítulo 6 (Proyecto)** de la memoria presentada en la asignatura *Evaluación de Capacidades en la Empresa I*.  
+Corresponde a la parte práctica del trabajo de investigación sobre la aplicación de IA en la **gestión de incidencias universitarias**.  
+
+El prototipo se desarrolló con un enfoque **de investigación aplicada**, y su propósito es servir como **demostración conceptual** de la viabilidad técnica del uso de IA y PLN en instituciones académicas.
+
+---
+
+## 📚 Referencias principales
+
+- UNESCO. (2021). *AI and Education: Guidance for Policy-Makers.*  
+  [https://unesdoc.unesco.org/ark:/48223/pf0000376709](https://unesdoc.unesco.org/ark:/48223/pf0000376709)  
+
+- OECD. (2020). *Trustworthy artificial intelligence (AI) in education.*  
+  [[https://www.oecd.org/education/opportunities-guidelines-and-guardrails-for-effective-and-equitable-use-of-ai-in-education.pdf](https://www.oecd.org/education/opportunities-guidelines-and-guardrails-for-effective-and-equitable-use-of-ai-in-education.pdf](https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/04/trustworthy-artificial-intelligence-ai-in-education_f1a7c415/a6c90fa9-en.pdf))
+
+---
+
+## 👨‍💻 Autor
+
+**Raúl Cid González**  
+📧 rcidg@alumnos.nebrija.es  
+📍 Universidad Nebrija, Madrid, España  
+
+---
+
+## 🏁 Licencia
+
+Este repositorio se distribuye bajo la licencia académica de uso no comercial.  
+Se permite su consulta y reutilización con fines educativos citando al autor y la Universidad Nebrija.
+
+---
+
+# © 2025 Raúl Cid González — Universidad Nebrija
+
+---
+
+🌐 **Repositorio oficial:** [https://github.com/Pinguicidgon/Asistente-IA-Nebrija](https://github.com/Pinguicidgon/Asistente-IA-Nebrija)
