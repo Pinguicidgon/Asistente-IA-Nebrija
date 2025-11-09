@@ -123,3 +123,6 @@ Se permite su consulta y reutilización con fines educativos citando al autor y 
 ---
 
 🌐 **Repositorio oficial:** [https://github.com/Pinguicidgon/Asistente-IA-Nebrija](https://github.com/Pinguicidgon/Asistente-IA-Nebrija)
+
+# Demostración
+<img width="880" height="341" alt="Captura de pantalla 2025-11-09 200835" src="https://github.com/user-attachments/assets/8099f58c-04a2-49a3-8667-564c5d352695" />
