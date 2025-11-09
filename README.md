@@ -69,9 +69,6 @@ Después de eso, el programa funcionará de forma más rápida en tu equipo.
 
 ---
 
-
----
-
 ### 🧩 Descripción del funcionamiento
 
 El asistente analiza el texto introducido por el usuario utilizando un modelo de **clasificación semántica de lenguaje natural (Zero-Shot Classification)**.  
