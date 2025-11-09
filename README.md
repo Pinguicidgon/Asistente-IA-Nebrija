@@ -72,9 +72,7 @@ Después de eso, el programa funcionará de forma más rápida en tu equipo.
 
 ---
 
-### 🧩 **BLOQUE 3 – Funcionamiento del modelo**
-
-## 🧩 Descripción del funcionamiento
+### 🧩 Descripción del funcionamiento
 
 El asistente analiza el texto introducido por el usuario utilizando un modelo de **clasificación semántica de lenguaje natural (Zero-Shot Classification)**.  
 A partir de una lista de categorías predefinidas, el modelo predice el tipo de incidencia más probable.
@@ -86,14 +84,6 @@ A partir de una lista de categorías predefinidas, el modelo predice el tipo de 
 - Problema técnico  
 - Consulta administrativa  
 - Otro tipo de incidencia  
-
----
-
-## 📸 Ejemplo de ejecución
-
-![Ejecución del asistente](screenshots/ejecucion.png)
-
-*Figura 1. Ejemplo de clasificación de incidencia con IA (modelo BART).*
 
 ---
 
