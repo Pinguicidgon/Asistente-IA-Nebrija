@@ -1,4 +1,75 @@
-# 🧠 Asistente Inteligente Nebrija (IA + PLN)
+# 🧠 Asistente Inteligente Nebrija  
+### Prototipo experimental para el análisis de incidencias mediante IA
+
+🎯 Objetivo del proyecto (REEMPLAZAR)
+## 🎯 Objetivo del proyecto
+
+Este repositorio recoge el **prototipo experimental desarrollado como apoyo práctico**
+al trabajo de investigación titulado:
+
+**“Uso de la Inteligencia Artificial para la resolución de incidencias en la Universidad Nebrija”**.
+
+El objetivo del prototipo **no es desarrollar una aplicación final**, sino **demostrar,
+mediante un caso práctico**, cómo las técnicas de Procesamiento del Lenguaje Natural (PLN)
+pueden aplicarse al análisis y clasificación de incidencias universitarias escritas en
+lenguaje natural.
+
+El sistema se utiliza como **herramienta de apoyo a la investigación**, permitiendo:
+- Evaluar la capacidad de modelos preentrenados para clasificar incidencias
+- Analizar su comportamiento sin entrenamiento adicional
+- Explorar su posible utilidad en entornos universitarios
+
+⚙️ Tecnologías utilizadas (PEQUEÑO AJUSTE)
+## ⚙️ Tecnologías utilizadas
+
+- **Python 3.11**
+- **Hugging Face – transformers**
+  - Modelo preentrenado: `facebook/bart-large-mnli`
+  - Enfoque: *Zero-Shot Classification*
+- **PyTorch (torch)** como motor de inferencia
+- **Pandas** para evaluación experimental con datasets
+- **Streamlit**, utilizado únicamente como **interfaz experimental de visualización**
+- **Visual Studio Code**
+- **Sistema operativo**: Windows 11
+
+🧠 Modelo de IA (ESTA SECCIÓN ESTÁ MUY BIEN, solo matiz)
+
+Añade esta frase clave al final:
+
+El modelo se emplea exclusivamente con fines de **investigación y demostración técnica**,
+sin realizar procesos de entrenamiento, ajuste fino (*fine-tuning*) ni despliegue en producción.
+
+🧩 Funcionalidades (CAMBIAR EL TÍTULO)
+## 🧩 Capacidades del prototipo experimental
+
+
+Y en la intro:
+
+Las siguientes capacidades se implementan como **apoyo al análisis experimental**
+del comportamiento del modelo:
+
+🧪 Evaluación del modelo (AQUÍ CLAVA CON LA MEMORIA)
+
+Añade al final:
+
+Los resultados obtenidos no pretenden ser concluyentes, sino **orientativos**, y se utilizan
+para apoyar la reflexión académica sobre las ventajas y limitaciones del uso de IA en la
+gestión de incidencias universitarias.
+
+💬 Contexto académico (ESTA PARTE ES CLAVE)
+
+Reemplaza por:
+
+## 💬 Contexto académico
+
+Este proyecto se desarrolla en el marco de la asignatura  
+**Evaluación del Desarrollo de Capacidades en la Empresa I**,  
+como parte del **trabajo de investigación aplicado** presentado en la memoria académica.
+
+El prototipo tiene un carácter **exploratorio**, y su finalidad es servir como
+**soporte práctico a las conclusiones teóricas** del trabajo, no como un sistema final
+listo para su implantación real.
+
 
 Proyecto académico desarrollado por **Raúl Cid González** para la **Universidad Nebrija**  
 📚 *Grado en Ingeniería Informática – Escuela Politécnica Superior*  
@@ -84,25 +155,6 @@ A partir de una lista de categorías predefinidas, el modelo predice el tipo de 
 
 ---
 
-## 💬 Contexto académico
-
-Este proyecto forma parte del **capítulo 6 (Proyecto)** de la memoria presentada en la asignatura *Evaluación de Capacidades en la Empresa I*.  
-Corresponde a la parte práctica del trabajo de investigación sobre la aplicación de IA en la **gestión de incidencias universitarias**.  
-
-El prototipo se desarrolló con un enfoque **de investigación aplicada**, y su propósito es servir como **demostración conceptual** de la viabilidad técnica del uso de IA y PLN en instituciones académicas.
-
----
-
-## 📚 Referencias principales
-
-- UNESCO. (2021). *AI and Education: Guidance for Policy-Makers.*  
-  [https://unesdoc.unesco.org/ark:/48223/pf0000376709](https://unesdoc.unesco.org/ark:/48223/pf0000376709)  
-
-- OECD. (2020). *Trustworthy artificial intelligence (AI) in education.*  
-  [[https://www.oecd.org/education/opportunities-guidelines-and-guardrails-for-effective-and-equitable-use-of-ai-in-education.pdf](https://www.oecd.org/education/opportunities-guidelines-and-guardrails-for-effective-and-equitable-use-of-ai-in-education.pdf](https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/04/trustworthy-artificial-intelligence-ai-in-education_f1a7c415/a6c90fa9-en.pdf))
-
----
-
 ## 👨‍💻 Autor
 
 **Raúl Cid González**  
@@ -121,6 +173,152 @@ Se permite su consulta y reutilización con fines educativos citando al autor y 
 # © 2025 Raúl Cid González — Universidad Nebrija
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+🧠 Asistente Inteligente Nebrija
+Prototipo experimental para el análisis de incidencias mediante IA
+
+Proyecto académico desarrollado por Raúl Cid González para la Universidad Nebrija
+📚 Grado en Ingeniería Informática – Escuela Politécnica Superior
+👨‍🏫 Tutor académico: Adrián Pradilla Pórtoles
+
+🎯 Objetivo del proyecto
+
+Este repositorio recoge el prototipo experimental desarrollado como apoyo práctico
+al trabajo de investigación titulado:
+
+“Uso de la Inteligencia Artificial para la resolución de incidencias en la Universidad Nebrija”.
+
+El objetivo del prototipo no es desarrollar una aplicación final, sino demostrar, mediante un caso práctico, cómo las técnicas de Procesamiento del Lenguaje Natural (PLN) pueden aplicarse al análisis y clasificación de incidencias universitarias escritas en lenguaje natural.
+
+El sistema se utiliza como herramienta de apoyo a la investigación, permitiendo:
+
+Evaluar la capacidad de modelos preentrenados para clasificar incidencias
+
+Analizar su comportamiento sin entrenamiento adicional
+
+Explorar su posible utilidad en entornos universitarios
+
+💬 Contexto académico
+
+Este proyecto se desarrolla en el marco de la asignatura
+Evaluación del Desarrollo de Capacidades en la Empresa I,
+como parte del trabajo de investigación aplicado presentado en la memoria académica.
+
+El prototipo tiene un carácter exploratorio, y su finalidad es servir como
+soporte práctico a las conclusiones teóricas del trabajo, no como un sistema final listo para su implantación real.
+
+⚙️ Tecnologías utilizadas
+
+Python 3.11
+
+Hugging Face – transformers
+
+Modelo preentrenado: facebook/bart-large-mnli
+
+Enfoque: Zero-Shot Classification
+
+PyTorch (torch) como motor de inferencia
+
+Pandas para evaluación experimental con datasets
+
+Streamlit, utilizado como interfaz experimental de visualización
+
+Visual Studio Code
+
+Sistema operativo: Windows 11
+
+🧠 Modelo de IA
+
+El asistente emplea un modelo de clasificación semántica Zero-Shot, capaz de asignar una incidencia a una categoría sin necesidad de entrenamiento específico sobre datos propios.
+
+El modelo se emplea exclusivamente con fines de investigación y demostración técnica,
+sin realizar procesos de entrenamiento, ajuste fino (fine-tuning) ni despliegue en producción.
+
+🧩 Capacidades del prototipo experimental
+
+Las siguientes capacidades se implementan como apoyo al análisis experimental del comportamiento del modelo:
+
+Clasificación automática de incidencias en categorías predefinidas
+
+Estimación de prioridad a partir de reglas lingüísticas
+
+Gestión de preguntas frecuentes (FAQ) con enlaces informativos
+
+Registro de conversaciones y feedback del usuario
+
+Evaluación experimental mediante datasets en formato CSV
+
+Interfaz visual para simulación de uso real por parte de estudiantes
+
+🧪 Evaluación del modelo
+
+El prototipo incluye un módulo de evaluación que permite comparar las predicciones del modelo con un conjunto de incidencias simuladas almacenadas en un archivo incidencias.csv.
+
+Los resultados obtenidos no pretenden ser concluyentes, sino orientativos, y se utilizan para apoyar la reflexión académica sobre las ventajas y limitaciones del uso de IA en la gestión de incidencias universitarias.
+
+🚀 Cómo ejecutar el asistente
+1️⃣ Clonar el repositorio
+git clone https://github.com/Pinguicidgon/Asistente-IA-Nebrija.git
+cd Asistente-IA-Nebrija
+
+2️⃣ Instalar dependencias
+pip install transformers torch pandas streamlit
+
+3️⃣ Ejecutar versión consola
+python Asistente_Nebrija.py
+
+4️⃣ Ejecutar interfaz web (opcional)
+streamlit run app.py
+
+
+📌 Nota: la primera ejecución descargará automáticamente el modelo desde Hugging Face.
+Este proceso puede tardar unos minutos y solo ocurre la primera vez.
+
+🧩 Descripción del funcionamiento
+
+El asistente analiza el texto introducido por el usuario utilizando técnicas de Procesamiento del Lenguaje Natural y clasifica la consulta en una de las siguientes categorías:
+
+Problema de acceso
+
+Error de matrícula
+
+Cuenta bloqueada
+
+Problema técnico
+
+Consulta administrativa
+
+Otro tipo de incidencia
+
+Además, el sistema permite recoger feedback del usuario (Sí / No) sobre la utilidad de la respuesta, lo que facilita un análisis posterior del éxito percibido del asistente.
+
+👨‍💻 Autor
+
+Raúl Cid González
+📧 rcidg@alumnos.nebrija.es
+
+📍 Universidad Nebrija, Madrid, España
+
+🏁 Licencia
+
+Este repositorio se distribuye bajo una licencia académica de uso no comercial.
+Se permite su consulta y reutilización con fines educativos citando al autor y a la Universidad Nebrija.
+
+📸 Demostración
+<img width="880" height="341" alt="Demostración del asistente" src="https://github.com/user-attachments/assets/8099f58c-04a2-49a3-8667-564c5d352695" />
+© 2025 Raúl Cid González — Universidad Nebrija
+
+
 
 🌐 **Repositorio oficial:** [https://github.com/Pinguicidgon/Asistente-IA-Nebrija](https://github.com/Pinguicidgon/Asistente-IA-Nebrija)
 
