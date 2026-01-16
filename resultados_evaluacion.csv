@@ -1,9 +1,9 @@
 texto,tipo_esperado,prediccion,prioridad,confianza_top
-No puedo acceder a Blackboard desde ayer,problema de acceso,problema de acceso,alta,0.8401896953582764
-Me da error al confirmar la matrícula de este cuatrimestre,error de matrícula,error de matrícula,normal,0.5347337126731873
-Después de varios intentos mi cuenta se ha bloqueado,cuenta bloqueada,cuenta bloqueada,alta,0.6381926536560059
-Quiero saber cómo puedo cambiar de grupo de una asignatura,consulta administrativa,consulta administrativa,normal,0.4959084987640381
-La aplicación de correo falla y no recibo mensajes,problema técnico,problema de acceso,normal,0.5474972724914551
-Tengo dudas sobre los plazos para solicitar el título,consulta administrativa,problema de acceso,normal,0.6566646695137024
-No puedo entrar a Teams ni al correo institucional,problema de acceso,problema de acceso,alta,0.8355521559715271
-Al intentar pagar las tasas de matrícula me aparece un error desconocido,error de matrícula,otro tipo de incidencia,normal,0.41544222831726074
+No puedo acceder a Blackboard desde ayer,problema de acceso,problema de acceso,alta,0.475723534822464
+Me da error al confirmar la matrícula de este cuatrimestre,error de matrícula,error de matrícula,normal,1.0
+Después de varios intentos mi cuenta se ha bloqueado,cuenta bloqueada,cuenta bloqueada,alta,0.8758730888366699
+Quiero saber cómo puedo cambiar de grupo de una asignatura,consulta administrativa,otro tipo de incidencia,normal,0.290947288274765
+La aplicación de correo falla y no recibo mensajes,problema técnico,problema técnico,normal,1.0
+Tengo dudas sobre los plazos para solicitar el título,consulta administrativa,consulta administrativa,normal,1.0
+No puedo entrar a Teams ni al correo institucional,problema de acceso,otro tipo de incidencia,alta,0.37999725341796875
+Al intentar pagar las tasas de matrícula me aparece un error desconocido,error de matrícula,error de matrícula,normal,1.0

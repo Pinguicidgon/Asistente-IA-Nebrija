@@ -12,7 +12,7 @@
 # Requisitos:
 #   pip install transformers torch pandas
 #
-# Ejecución:
+# Ejecución (consola):
 #   python Asistente_Nebrija.py
 #
 # Archivos esperados:
@@ -46,7 +46,6 @@ categorias = [
     "otro tipo de incidencia"
 ]
 
-# Umbral: si el modelo no está "seguro", pedimos más info o lo marcamos como "otro"
 UMBRAL_CONFIANZA = 0.45
 
 
@@ -122,7 +121,6 @@ FAQ: List[Dict] = [
 
 
 def detectar_faq(texto: str) -> Optional[Dict]:
-    """Devuelve un item de FAQ si encaja por patrones; si no, None."""
     texto_min = texto.lower()
     for item in FAQ:
         if any(re.search(p, texto_min) for p in item["patterns"]):
@@ -153,7 +151,6 @@ def estimar_prioridad(texto: str) -> str:
 
 
 def preguntas_seguimiento(categoria: str) -> List[str]:
-    """Preguntas útiles para pedir datos cuando hay ambigüedad o para mejorar el ticket."""
     if categoria == "problema de acceso":
         return [
             "¿Te falla en Blackboard, Teams, correo o en todos?",
@@ -190,15 +187,32 @@ def preguntas_seguimiento(categoria: str) -> List[str]:
     ]
 
 
+def clasificacion_por_reglas(texto: str) -> Optional[str]:
+    t = texto.lower()
+
+    if any(k in t for k in ["matrícula", "matricula", "tasas", "pagar", "pago de tasas", "confirmar la matrícula", "confirmar la matricula"]):
+        return "error de matrícula"
+
+    if any(k in t for k in ["plazos", "solicitar el título", "solicitar el titulo", "título", "titulo", "trámite", "tramite", "cambio de grupo", "secretaría", "secretaria"]):
+        return "consulta administrativa"
+
+    if any(k in t for k in ["correo", "outlook", "mensajes", "mail"]) and any(k in t for k in ["falla", "no recibo", "no llegan", "no me llegan", "error", "no funciona"]):
+        return "problema técnico"
+
+    return None
+
+
 def clasificar_incidencia(texto: str) -> Tuple[str, Dict[str, float], str, float]:
-    """
-    Recibe el texto y devuelve:
-    - categoría final
-    - scores por etiqueta
-    - prioridad estimada
-    - confianza (score de la etiqueta top)
-    """
-    resultado = clasificador(texto, categorias)
+    por_reglas = clasificacion_por_reglas(texto)
+    if por_reglas:
+        prioridad = estimar_prioridad(texto)
+        return por_reglas, {}, prioridad, 1.0
+
+    resultado = clasificador(
+        texto,
+        categorias,
+        hypothesis_template="Esta incidencia trata sobre {}."
+    )
 
     etiqueta_top = resultado["labels"][0]
     score_top = float(resultado["scores"][0])
@@ -206,7 +220,6 @@ def clasificar_incidencia(texto: str) -> Tuple[str, Dict[str, float], str, float
 
     prioridad = estimar_prioridad(texto)
 
-    # Umbral de confianza
     if score_top < UMBRAL_CONFIANZA:
         etiqueta_top = "otro tipo de incidencia"
 
@@ -216,12 +229,6 @@ def clasificar_incidencia(texto: str) -> Tuple[str, Dict[str, float], str, float
 # ---------- 4. Evaluación con CSV (incidencias.csv) ----------
 
 def evaluar_sobre_csv(ruta_csv: str) -> Tuple[pd.DataFrame, float]:
-    """
-    Lee incidencias.csv con columnas:
-    - texto
-    - tipo_esperado
-    Clasifica y calcula precisión.
-    """
     df = pd.read_csv(ruta_csv)
 
     predicciones = []
@@ -282,7 +289,27 @@ def registrar_log(texto_usuario: str, tipo: str, prioridad: str, confianza: floa
     df.to_csv(LOG_PATH, mode="a", index=False, header=not existe, encoding="utf-8")
 
 
-# ---------- 6. Chat interactivo ----------
+# ---------- 6. Registro de feedback (SI / NO) ----------
+
+FEEDBACK_PATH = Path("feedback_chat.csv")
+
+def registrar_feedback(texto_usuario: str, tipo: str, prioridad: str, confianza: float, respuesta: str, feedback: str) -> None:
+    fila = {
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
+        "texto_usuario": texto_usuario,
+        "tipo_detectado": tipo,
+        "prioridad": prioridad,
+        "confianza_top": round(confianza, 4),
+        "respuesta_resumen": respuesta.replace("\n", " ").strip()[:250],
+        "feedback": feedback
+    }
+
+    existe = FEEDBACK_PATH.exists()
+    df = pd.DataFrame([fila])
+    df.to_csv(FEEDBACK_PATH, mode="a", index=False, header=not existe, encoding="utf-8")
+
+
+# ---------- 7. Chat interactivo ----------
 
 def formatear_links(links: List[Dict[str, str]]) -> str:
     if not links:
@@ -303,7 +330,6 @@ def chat_simulado() -> None:
             print("🤖 Asistente: Gracias, hasta pronto.")
             break
 
-        # 1) Intento FAQ primero
         faq = detectar_faq(texto)
         if faq:
             respuesta = faq["answer"]
@@ -315,13 +341,11 @@ def chat_simulado() -> None:
             registrar_log(texto, f"FAQ:{faq['intent']}", "n/a", 1.0, respuesta)
             continue
 
-        # 2) Si no es FAQ, lo trato como incidencia
         categoria, scores, prioridad, conf = clasificar_incidencia(texto)
 
         print(f"🤖 Asistente: He detectado que tu incidencia parece un '{categoria}'.")
         print(f"   Prioridad estimada: {prioridad.upper()} (confianza: {conf:.2f})")
 
-        # Respuesta por categoría
         if categoria == "problema de acceso":
             respuesta = (
                 "Te recomiendo probar primero:\n"
@@ -364,7 +388,6 @@ def chat_simulado() -> None:
 
         print("   " + respuesta.replace("\n", "\n   "))
 
-        # Si es "otro" o poca confianza, hago preguntas de seguimiento
         if categoria == "otro tipo de incidencia" or conf < 0.55:
             qs = preguntas_seguimiento(categoria)
             print("\n   Para ayudarte mejor, dime por favor:")
@@ -375,20 +398,17 @@ def chat_simulado() -> None:
         registrar_log(texto, categoria, prioridad, conf, respuesta)
 
 
-# ---------- 7. Punto de entrada ----------
+# ---------- 8. Punto de entrada ----------
 
 if __name__ == "__main__":
     print("=== Asistente Nebrija · Versión mejorada ===\n")
 
-    # 1) Evaluación sobre el CSV
     try:
         df_resultados, precision = evaluar_sobre_csv("incidencias.csv")
-        # Guardar resultados para evidencias (muy útil para anexos)
         df_resultados.to_csv("resultados_evaluacion.csv", index=False, encoding="utf-8")
         print("✅ Se ha guardado 'resultados_evaluacion.csv' con predicciones y confianza.\n")
     except FileNotFoundError:
         print("No se ha encontrado 'incidencias.csv'. "
               "Crea el archivo en la misma carpeta para ejecutar la evaluación.\n")
 
-    # 2) Chat interactivo en consola
     chat_simulado()
