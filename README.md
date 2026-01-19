@@ -76,8 +76,7 @@ Las siguientes funcionalidades se implementan como **apoyo al análisis experime
 
 ## 🧪 Evaluación del modelo
 
-El prototipo incluye un módulo de evaluación que permite comparar las predicciones del modelo con un conjunto de incidencias simuladas almacenadas en el archivo:
-
+El prototipo incluye un módulo de evaluación que permite comparar las predicciones del modelo con un conjunto de incidencias simuladas almacenadas en el archivo `incidencias.csv`.
 
 Los resultados obtenidos **no pretenden ser concluyentes**, sino **orientativos**, y se utilizan para apoyar la reflexión académica sobre las **ventajas y limitaciones del uso de IA** en la gestión de incidencias universitarias.
 
@@ -92,8 +91,7 @@ cd Asistente-IA-Nebrija
 ```
 ### 2️⃣ Instalar dependencias
 ```bash
-pip install transformers torch pandas
-python -m pip install streamlit
+pip install transformers torch pandas streamlit
 
 ```
 
@@ -120,17 +118,12 @@ Este proceso puede tardar unos minutos y solo ocurre la primera vez.
 
 El asistente analiza el texto introducido por el usuario mediante técnicas de PLN y clasifica la consulta en una de las siguientes categorías:
 
-Problema de acceso
-
-Error de matrícula
-
-Cuenta bloqueada
-
-Problema técnico
-
-Consulta administrativa
-
-Otro tipo de incidencia
+- Problema de acceso  
+- Error de matrícula  
+- Cuenta bloqueada  
+- Problema técnico  
+- Consulta administrativa  
+- Otro tipo de incidencia  
 
 Además, el sistema permite recoger feedback del usuario (Sí / No) sobre la utilidad de la respuesta, facilitando un análisis posterior del éxito percibido del asistente.
 
@@ -151,6 +144,6 @@ Se permite su consulta y reutilización con fines educativos citando al autor y 
 
 ---
 
-# © 2025 Raúl Cid González — Universidad Nebrija
+# © 2026 Raúl Cid González — Universidad Nebrija
 
 ---
